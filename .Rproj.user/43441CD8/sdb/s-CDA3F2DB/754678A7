@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"R Notebook\"\noutput: html_notebook\n---\n\nLoad training data into house\n\nLet's examine our data for predictors with large number of NA values\n\n```{r}\nhouse = read.csv('train.csv')\nnacols = colMeans(is.na(house))>.1\nhousenacols = colMeans(is.na(house[nacols]))\nbarplot(housenacols)\n```\n\nThere are some features with large amount of NA values. We will remove features with greater than 0.40 NA values.\n\n```{r}\ndf = house[, !names(house) %in% names(housenacols > 0.4)]\n```\n\n",
+    "created" : 1479427303693.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "218747167",
+    "id" : "754678A7",
+    "lastKnownWriteTime" : 1479429511,
+    "last_content_update" : 1479429511471,
+    "path" : "C:/Users/JTran/workspace/house-prices/dataClean.Rmd",
+    "project_path" : "dataClean.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "marks" : "<:15,0\n>:15,0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

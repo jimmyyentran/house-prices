@@ -1,0 +1,22 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Load training data into house
+
+Let's examine our data for predictors with large number of NA values
+
+```{r}
+house = read.csv('train.csv')
+nacols = colMeans(is.na(house))>.1
+housenacols = colMeans(is.na(house[nacols]))
+barplot(housenacols)
+```
+
+There are some features with large amount of NA values. We will remove features with greater than 0.40 NA values.
+
+```{r}
+df = house[, !names(house) %in% names(housenacols > 0.4)]
+```
+

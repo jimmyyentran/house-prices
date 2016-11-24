@@ -1,0 +1,4 @@
+"0","house = read.csv('train.csv')"
+"0","nacols = colMeans(is.na(house))>.1"
+"0","housenacols = colMeans(is.na(house[nacols]))"
+"0","barplot(housenacols)"
