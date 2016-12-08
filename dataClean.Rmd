@@ -20,3 +20,17 @@ There are some features with large amount of NA values. We will remove features 
 df = house[, !names(house) %in% names(housenacols > 0.4)]
 ```
 
+```{r}
+df$Id = NULL
+```
+
+```{r}
+#df[df %in% "TA"] = 3
+#df$BsmtCond[df$BsmtCond == "TA"] = "3"
+#as.data.frame(sapply(df, function(x) gsub("TA", "3", x)))
+#df = gsub("TA", "5", df)
+```
+
+
+cor(df)
+
